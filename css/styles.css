@@ -301,6 +301,10 @@ text-align: center;
     /* width: 270px; */
     height: 120px;
     margin-bottom: 30px;
+    background-color: #F5F4FA;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .features-item-details::before {
@@ -312,7 +316,7 @@ text-align: center;
 }
 
 .features-item-planning::before {
-    background-image: url(../images/features-icon-leptop.svg);
+    background-image: url(../images/features-icon-diagram.svg);
 }
 
 .features-item-technology::before {
