@@ -40,8 +40,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 img {
     display: block;
-    /* max-width: 100%;
-    height: auto; */
+    max-width: 100%;
+    height: auto;
 }
 
 /* END Reset */
@@ -92,7 +92,7 @@ body {
 }
 
 .cards-set-item {
-   flex-basis: calc((100% - (var(--indent) * (var(--cards-in-row) -1 ))) / var(--cards-in-row));
+   flex-basis: calc((100% - (var(--indent) * (var(--cards-in-row) - 1))) / (var(--cards-in-row)));
 }
 
 
@@ -185,17 +185,51 @@ body {
     color: var(--brand-color);
 }
 
+.auth-nav-mail, 
+.auth-nav-tel {
+    display: inline-flex;
+    align-items: center;
+}
+
+.auth-nav-mail::before {
+    /* display: inline-flex; */
+    content: '';
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    background-image: url('../images/header-icon-envelope.svg');
+}
+
+.auth-nav-tel::before {
+    content: '';
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    background-image: url('../images/header-icon-smartphone.svg');
+}
+
 /* Hero */
 
-.hero,
+
 .footer {
     background-color: var(--hero-and-footer-background-color);
 }
 
-.hero.section {
+.hero.section {    
     padding: 200px 0;
     text-align: center;
+    
+    height: 600px;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)), url('../images/hero-bg-img.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
+
 
 .hero-title {
     margin-bottom: 30px;
@@ -235,7 +269,8 @@ body {
 
 .features-title,
 .activities-title,
-.team-title {
+.team-title, 
+.clients-title {
 margin-bottom: 50px;
 
 color: var(--secondary-color);
@@ -259,6 +294,31 @@ text-align: center;
 .features-item:not(:last-child) {
     margin-right: 30px;
 }
+
+.features-item::before {
+    display: flex;
+    content: '';
+    /* width: 270px; */
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.features-item-details::before {
+    background-image: url(../images/features-icon-antenna.svg);
+}
+
+.features-item-punctuality::before {
+    background-image: url(../images/features-icon-clock.svg);
+}
+
+.features-item-planning::before {
+    background-image: url(../images/features-icon-leptop.svg);
+}
+
+.features-item-technology::before {
+    background-image: url(../images/features-icon-astronaut.svg);
+}
+
 
 .features-subtitle {
     margin-bottom: 10px;
@@ -313,6 +373,17 @@ text-align: center;
 
     background-color: var(--logo-secondary-color);
 }
+
+/* Clients */
+
+.clients.section {
+    --cards-in-row: 6;
+}
+
+.cliens-item {
+    height: 92px;
+    outline: 1px solid red;
+} 
 
 /* footer */
 
