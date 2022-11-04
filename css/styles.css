@@ -12,6 +12,9 @@
     --team-card-bg-color: #ffffff;
     --portfolio-card-bg-color: #ffffff;
     --portfolio-content-border-color: #EEEEEE;
+    --socials-primary-fill: #AFB1B8;
+    --socials-secondary-fill: #ffffff;
+    --socials-footer-bg-fill: rgba(255, 255, 255, 0.1);
     --primary-font-family: 'Roboto',
         sans-serif;
     --logo-font-family: 'Raleway',
@@ -191,25 +194,31 @@ body {
 
 .auth-nav-mail, 
 .auth-nav-tel {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
-.auth-nav-mail::before {
+.header-mail, 
+.header-tel {
+    fill: currentColor;
+    margin-right: 10px;
+}
+
+/* .auth-nav-mail::before {
     content: '';
     width: 16px;
     height: 12px;
     margin-right: 10px;
     background-image: url('../images/header-icon-envelope.svg');
-}
+} */
 
-.auth-nav-tel::before {
+/* .auth-nav-tel::before {
     content: '';
     width: 10px;
     height: 16px;
     margin-right: 10px;
     background-image: url('../images/header-icon-smartphone.svg');
-}
+} */
 
 /* Hero */
 
@@ -280,25 +289,39 @@ color: var(--secondary-color);
 
 font-weight: 700;
 font-size: 36px;
-line-height: 1.17;
+line-height: calc(42 / 36);
 text-align: center;
 }
 
 /* Features */
 
-.features-container {
+.features.section {
+    --cards-in-row: 4;
+}
+
+.features-icon-container {
     display: flex;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--portfolio-btn-background-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
 }
 
-.features-item {
+/* .features-container {
+    display: flex;
+} */
+
+/* .features-item {
     width: 270px;
-}
+} */
 
-.features-item:not(:last-child) {
+/* .features-item:not(:last-child) {
     margin-right: 30px;
-}
+} */
 
-.features-item::before {
+/* .features-item::before {
     display: flex;
     content: '';
     height: 120px;
@@ -323,7 +346,7 @@ text-align: center;
 
 .features-item-technology::before {
     background-image: url(../images/features-icon-astronaut.svg);
-}
+} */
 
 
 .features-subtitle {
@@ -333,12 +356,12 @@ text-align: center;
 
     font-weight: 700;
     font-size: 14px;
-    line-height: 1.17;
+    line-height: calc(16 / 14);
     text-transform: uppercase;
 }
 
 .features-text {
-    line-height: 1.71;
+    line-height: calc(24 / 14);
 }
 
 /* Our activities */
@@ -388,13 +411,30 @@ text-align: center;
 
 .team .social-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 44px;
     height: 44px;
-    outline: 1px solid red;
+    border-radius: 50%;
+    color: var(--socials-primary-fill);
+    background-color: var(--team-card-bg-color);
+}
+
+.social-list-link:hover, 
+.social-list-link:focus {
+    color: var(--socials-secondary-fill);
+    background-color: var(--brand-color);
+}
+
+.social-list-icon {
+    fill: currentColor;
 }
 
 /* .social-list-link {
@@ -408,16 +448,26 @@ text-align: center;
     --cards-in-row: 6;
 }
 
-.cliens-item {
+.clients-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    /* outline: 1px solid red; */
+    color: var(--socials-primary-fill);
 } 
 
+.clients-logo:hover, 
+.clients-logo:focus {
+    color: var(--brand-color);
+}
+
+.clients-icon {
+    fill: currentColor;
+}
+
+/* 
 .clients .link {
     display: block;
     width: 100%;
@@ -449,11 +499,45 @@ text-align: center;
 
 .clients .logo-6 {
     background-image: url('../images/clients-icon-logo-6.svg');
-}
+} */
+
 /* footer */
 
 .footer {
     padding: 60px 0;
+}
+
+.footer-container {
+    display: flex;
+    gap: 70px;
+}
+
+.footer-socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--socials-secondary-fill);
+    background-color: var(--socials-footer-bg-fill);
+}
+
+.footer-socials-link:hover, 
+.footer-socials-link:focus {
+   background-color: var(--brand-color);
+}
+
+
+.footer-socials-icon {
+    fill: currentColor
 }
 
 .footer-logo {
